@@ -15,8 +15,8 @@ public class SecondRatings {
 
 	public SecondRatings(String movieFile, String ratingsFile) {
 		FirstRatings fr = new FirstRatings();
-		myMovies = fr.loadMovies(movieFile);
-		myRaters = fr.loadRaters(ratingsFile);
+		this.myMovies = fr.loadMovies(movieFile);
+		this.myRaters = fr.loadRaters(ratingsFile);
 	}
 
 	public int getMovieSize() { return myMovies.size();}

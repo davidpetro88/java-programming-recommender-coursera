@@ -8,7 +8,7 @@ import br.com.stepone.week01.Rating;
 public class MovieRunnerAverage {
 
 	public static void main(String[] args) {
-//		printAverageRatings();
+		printAverageRatings();
 		getAverageRatingOneMovie();
 	}
 	
@@ -16,7 +16,6 @@ public class MovieRunnerAverage {
         SecondRatings secondRatings = new SecondRatings("data/ratedmovies_short.csv", "data/ratings_short.csv");
         System.out.println("The number of movies is " + secondRatings.getMovieSize());
         System.out.println("The number of raters is " + secondRatings.getRaterSize());
-
         ArrayList<Rating> averageRatings =  secondRatings.getAverageRatings(3);
         Collections.sort(averageRatings);
         averageRatings.forEach(averageRating -> {
@@ -25,13 +24,10 @@ public class MovieRunnerAverage {
         System.out.println("\n");
     }
 
-    
     public static void getAverageRatingOneMovie() {
         SecondRatings secondRatings = new SecondRatings("data/ratedmovies_short.csv", "data/ratings_short.csv");
         String movieToFind = "The Godfather";
-        String getIdMovie = secondRatings.getID(movieToFind);
-        double averageRating = secondRatings.getAverageByID(getIdMovie, 0);
+        double averageRating = secondRatings.getAverageByID(secondRatings.getID(movieToFind), 0);
         System.out.println("The average rating of " + movieToFind + " is " + averageRating);
     }
-    
 }
