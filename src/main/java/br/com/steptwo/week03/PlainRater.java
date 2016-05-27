@@ -1,15 +1,17 @@
-package br.com.stepone.week01;
+package br.com.steptwo.week03;
 
-import java.util.*;
+import java.util.ArrayList;
+
+import br.com.stepone.week01.Rating;
 
 /**
  * Created by david on 5/22/16.
  */
-public class Rater {
+public class PlainRater implements Rater {
     private String myID;
     private ArrayList<Rating> myRatings;
 
-    public Rater(String id) {
+    public PlainRater(String id) {
         myID = id;
         myRatings = new ArrayList<Rating>();
     }
@@ -49,7 +51,6 @@ public class Rater {
         for(int k=0; k < myRatings.size(); k++){
             list.add(myRatings.get(k).getItem());
         }
-
         return list;
     }
 }

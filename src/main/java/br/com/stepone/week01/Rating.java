@@ -7,6 +7,8 @@ public class Rating implements Comparable<Rating> {
     private String item;
     private double value;
 
+    public Rating() {}
+    
     public Rating (String anItem, double aValue) {
         item = anItem;
         value = aValue;
@@ -30,7 +32,6 @@ public class Rating implements Comparable<Rating> {
     public int compareTo(Rating other) {
         if (value < other.value) return -1;
         if (value > other.value) return 1;
-
         return 0;
     }
 }

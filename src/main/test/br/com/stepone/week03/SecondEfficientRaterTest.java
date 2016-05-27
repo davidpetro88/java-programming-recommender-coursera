@@ -1,29 +1,22 @@
-package br.com.stepone.week02;
+package br.com.stepone.week03;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import br.com.stepone.week01.Rating;
-import br.com.steptwo.week02.SecondRatings;
-import br.com.steptwo.week03.MovieDatabase;
+import br.com.steptwo.week03.SecondRatings;
 
-public class QuizWeek02 {
-	private SecondRatings secondRatings;
+public class SecondEfficientRaterTest {
+
 	private static final double DELTA = 1e-15;
-	
-	@Before
-	public void setup() {
-		secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
-		MovieDatabase.initialize("ratedmoviesfull.csv");
-	}
-	
+
 	@Test
     public void testQuiz5() {
+		SecondRatings secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
         String movieToFind = "The Maze Runner";
         String getIdMovie = secondRatings.getID(movieToFind);
         double averageRating = secondRatings.getAverageByID(getIdMovie, 0);
@@ -33,6 +26,7 @@ public class QuizWeek02 {
     
 	@Test
     public void testQuiz6() {
+		SecondRatings secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
         String movieToFind = "Moneyball";
         String getIdMovie = secondRatings.getID(movieToFind);
         double averageRating = secondRatings.getAverageByID(getIdMovie, 0);
@@ -42,6 +36,7 @@ public class QuizWeek02 {
     
 	@Test
     public void testQuiz7() {
+		SecondRatings secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
         String movieToFind = "Vacation";
         String getIdMovie = secondRatings.getID(movieToFind);
         double averageRating = secondRatings.getAverageByID(getIdMovie, 0);
@@ -51,6 +46,7 @@ public class QuizWeek02 {
     
 	@Test
     public void testQuiz8() {
+		SecondRatings secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
         ArrayList<Rating> averageRatings =  secondRatings.getAverageRatings(50);
         System.out.println("Total : " + averageRatings.size());
         assertEquals(7, averageRatings.size());
@@ -58,6 +54,7 @@ public class QuizWeek02 {
     
 	@Test
     public void testQuiz9() {
+		SecondRatings secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
         ArrayList<Rating> averageRatings =  secondRatings.getAverageRatings(20);
         Collections.sort(averageRatings);
         System.out.println(averageRatings.get(0).getValue() + " " + secondRatings.getTitle(averageRatings.get(0).getItem()));
@@ -66,6 +63,7 @@ public class QuizWeek02 {
 
 	@Test
     public void testQuiz10() {
+		SecondRatings secondRatings = new SecondRatings("data/ratedmoviesfull.csv", "data/ratings.csv");
         ArrayList<Rating> averageRatings =  secondRatings.getAverageRatings(12);
         Collections.sort(averageRatings);
         System.out.println(averageRatings.get(0).getValue() + " " + secondRatings.getTitle(averageRatings.get(0).getItem()));

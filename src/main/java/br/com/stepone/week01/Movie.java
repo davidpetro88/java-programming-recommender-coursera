@@ -14,8 +14,7 @@ public class Movie {
 	private String poster;
 	private int minutes;
 
-	public Movie() {
-	}
+	public Movie() {}
 
 	public Movie(String anID, String aTitle, String aYear, String theGenres) {
 		// just in case data file contains extra whitespace
